@@ -1,0 +1,74 @@
+# Meeting Recap Formatter
+
+Reformat a meeting transcript into a clean, scannable MD recap.
+
+## Template
+
+```markdown
+[Date, e.g. May 1, 2026]
+
+[Link to event/meeting page]
+
+### **[Section Title]**
+
+* [Bullet point]
+* [Bullet point]
+  * [Sub-bullet for nested detail]
+  * [Sub-bullet]
+* [Bullet point]
+
+### **[Section Title]**
+
+* [Bullet point]
+* [Bullet point]
+
+### **Next Steps**
+
+* [Person]: [action item]
+* [Person]: [action item]
+* [Person]: [action item]
+```
+
+## Formatting Rules
+
+- Heading level 3 (`###`) with bold (`**...**`) for section titles
+- Date at the top, plain text, no heading
+- Event/meeting link directly under the date, plain URL
+- Bulleted lists throughout — no paragraphs
+- Sub-bullets for nested detail when a parent point has multiple components
+- "Next Steps" always last, formatted as `Person: action`
+- No emojis
+- Casual, direct, brief tone — preserve natural voice
+
+## Content Handling
+
+- Deduplicate aggressively — AI recaps often repeat points across "Quick recap," "Summary," and "Next steps." Merge into one place.
+- When the recap and next steps disagree or add detail, prefer the more specific version (usually next steps).
+- Don't invent specifics (version numbers, names, dates, links) not in the source. If something's ambiguous, keep it vague rather than guessing.
+- Flag anything internally contradictory rather than silently picking one version.
+- Strip filler from AI summaries; keep concrete decisions, owners, and timelines.
+
+## Section Logic
+
+- Group by topic/project, not by speaker or chronological order.
+- One topic = one section, even if it came up multiple times in the meeting.
+- Order sections roughly by importance/active work, not by when they were discussed.
+- Skip sections that would only have one trivial bullet — fold those into a catch-all "Other" section at the end (before Next Steps).
+
+## Next Steps
+
+- Only include action items with a clear owner.
+- Phrase as concrete actions, not vague intentions ("ship Beta 1" not "work on Beta 1").
+- If the same person has multiple related actions, keep them as separate bullets — don't over-consolidate.
+
+## Voice
+
+- Active voice, present/future tense.
+- Drop hedging language the AI loves ("the team discussed," "it was noted that") — just state the thing.
+- Names without titles or last names after first mention.
+
+## Output
+
+- Wrap the whole thing in a code fence so it's easy to copy.
+- No preamble or commentary — just the formatted MD.
+```
