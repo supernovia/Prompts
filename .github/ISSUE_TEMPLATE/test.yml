@@ -140,8 +140,7 @@ body:
   - type: checkboxes
     id: code-of-conduct
     attributes:
-      label: "Confirmation"
-      description: "Ensuring permissions and expectations are in place"
+      label: "Please confirm:"
       options:
         - label: "By submitting this request, I confirm this is for an official WordPress event, I have permission to use all provided logos/images, the work will be openly licensed for community use, and I understand fulfillment depends on volunteer availability"
           required: true
