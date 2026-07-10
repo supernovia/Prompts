@@ -125,7 +125,7 @@ body:
     attributes:
       label: "Existing Assets & Links"
       description: |
-        Please provide HIGH RESOLUTION files suitable for print (300dpi minimum).
+        Please provide HIGH RESOLUTION files suitable for print, ensuring you have permission/licensing to use any images you provide.
         Include:
         - Google Drive/Dropbox folders with assets
         - Any existing logos, brand guidelines, or previous designs
